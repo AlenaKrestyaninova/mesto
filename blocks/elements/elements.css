@@ -1,0 +1,24 @@
+.elements {
+    display: grid;
+    grid-template-columns: repeat(3, 282px);
+    column-gap: 17px;
+    row-gap: 20px;
+    padding-top: 51px;
+    margin: 0 auto;
+    justify-content: space-around;
+}
+
+/* Медиа-запрос для ширины 880px (меньше 880px)*/
+@media all and (max-width:918px) {
+    .elements {
+        grid-template-columns: repeat(2, 282px);
+        padding-top: 36px;
+    }
+}
+
+/* Медиа-запрос для ширины 425px (меньше 768px)*/
+@media all and (max-width:767px) {
+    .elements {
+        grid-template-columns: 282px;
+    }
+}

@@ -10,12 +10,13 @@
 
 
 /* Раздел profile*/
-
+@import url(../blocks/profile/profile.css);
 
 /* Раздел elements*/
-
+@import url(../blocks/elements/elements.css);
+@import url(../blocks/card/card.css);
 
 /* Раздел footer*/
 
-@import url(../blocks/footer/__copyright/footer__copyright.css);
+@import url(../blocks/footer/footer.css);
 

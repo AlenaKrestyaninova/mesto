@@ -10,23 +10,84 @@
   <div class="page">
     
     <header class="header">
-      <img src="./images/header-logo.svg" alt="лого" class="header__logo">
-      
+      <img src="./images/logo.svg" alt="лого" class="header__logo">
     </header>
 
     <main class="content">
-      <section class="profile">
 
+      <section class="popup">
+        <div class="popup__container">
+          <h2 class="popup__title">Редактировать профиль</h2>
+          <form action="" class="popup__form">
+            <input type="text" class="popup__name" placeholder="Жак-Ив Кусто">
+            <input type="text" class="popup__occupation" placeholder="Исследователь океана">
+            <button class="popup__submit">Сохранить</button>
+          </form>
+        </div>
+      </section>
+
+      <section class="profile">
+        <img src="./images/Avatar.png" alt="аватар" class="profile__avatar">
+        <div class="profile__info">
+          <div class="profile__text">
+            <h1 class="profile__title">Жак-Ив Кусто</h1>
+            <p class="profile__subtitle">Исследователь океана</p>
+          </div>
+          <button class="profile__edit">
+            <img src="./images/Edit Button.svg" alt="редактировать">
+          </button>
+        </div>
+        <button class="profile__add">+</button>
       </section>
 
       <section class="elements">
-        
+        <div class="card">
+          <img src="./images/Karachaevsk.png" alt="Карачаевск" class="card__img">
+          <div class="card__text">
+            <h2 class="card__title">Карачаевск</h2>
+            <img src="./images/like.svg" alt="лайк" class="card__like">
+          </div>
+        </div>
+        <div class="card">
+          <img src="./images/Elbrus.png" alt="Эльбрус" class="card__img">
+          <div class="card__text">
+            <h2 class="card__title">Гора Эльбрус</h2>
+            <img src="./images/like.svg" alt="лайк" class="card__like">
+          </div>
+        </div>
+        <div class="card">
+          <img src="./images/Dombai.png" alt="Домбай" class="card__img">
+          <div class="card__text">
+            <h2 class="card__title">Домбай</h2>
+            <img src="./images/like.svg" alt="лайк" class="card__like">
+          </div>
+        </div>
+        <div class="card">
+          <img src="./images/Elbrus.png" alt="Эльбрус" class="card__img">
+          <div class="card__text">
+            <h2 class="card__title">Гора Эльбрус</h2>
+            <img src="./images/like.svg" alt="лайк" class="card__like">
+          </div>
+        </div>
+        <div class="card">
+          <img src="./images/Dombai.png" alt="Домбай" class="card__img">
+          <div class="card__text">
+            <h2 class="card__title">Домбай</h2>
+            <img src="./images/like.svg" alt="лайк" class="card__like">
+          </div>
+        </div>
+        <div class="card">
+          <img src="./images/Karachaevsk.png" alt="Карачаевск" class="card__img">
+          <div class="card__text">
+            <h2 class="card__title">Карачаево-Черкесия</h2>
+            <img src="./images/like.svg" alt="лайк" class="card__like">
+          </div>
+        </div>
       </section>
     </main>
 
     <footer class="footer">
-      
-      <p class="footer__copyright">&copy; 2022. AlenaAlena</p>
+      <p class="footer__copyright">&copy; 2022. AlenaAlena &#38; Mesto</p>
     </footer>
     
   </div>

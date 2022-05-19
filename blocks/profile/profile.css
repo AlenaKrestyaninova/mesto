@@ -1,0 +1,105 @@
+.profile {
+    width: 100%;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: 120px 336px 1fr;
+    align-items: center;
+    padding-top: 40px;
+}
+
+.profile__info {
+    display: flex;
+    width: 336px;
+    padding-left: 30px;
+}
+
+.profile__title {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 42px;
+    line-height: 1.14;
+    color: #FFFFFF;
+    margin: 0;
+}
+
+.profile__subtitle {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.22;
+    color: #FFFFFF;
+    margin: 0;
+}
+
+.profile__edit {
+    width: 24px;
+    height: 24px;
+    border: 1px solid #FFFFFF;
+    background-color: transparent;
+    text-align: center;
+    margin-left: 18px;
+    margin-top: 15px;
+    padding: 0;
+    transition: opacity .3s ease-in-out;
+    cursor: pointer;
+}
+
+.profile__edit:hover {
+    opacity: 0.6;
+}
+
+.profile__add {
+    border: 2px solid #FFFFFF;
+    border-radius: 2px;
+    background-color: transparent;
+    color: #FFFFFF;
+    width: 150px;
+    height: 50px;
+    font-size: 22px;
+    padding: 0;
+    line-height: 0;
+    margin: 0;
+    justify-self: end;
+    transition: opacity .3s ease-in-out;
+    cursor: pointer;
+}
+
+.profile__add:hover {
+    opacity: 0.6;
+}
+
+/* Медиа-запрос для ширины 425px (меньше 768px)*/
+@media all and (max-width:767px) {
+    .profile {
+        grid-template-columns: 100%;
+        grid-template-rows: repeat(3, max-content);
+        justify-items: center;
+        padding-top: 42px;
+    }
+    .profile__info {
+        padding-top: 36px;
+        justify-content: center;
+        padding-left: 0;
+        width: 100%;
+    }
+    .profile__title {
+        font-size: 27px;
+        line-height: 1.22;
+        text-align: center;
+    }
+    .profile__subtitle {
+        font-size: 14px;
+        text-align: center;
+        padding-top: 14px;
+        padding-bottom: 36px;
+    }
+    .profile__edit {
+        margin-top: 8px;
+    }
+    .profile__add {
+        width: 100%;
+        justify-self: center;
+    }
+}

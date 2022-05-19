@@ -1,0 +1,44 @@
+.card {
+    display: block;
+    border-radius: 10px;
+    background-color: #FFFFFF;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.card__img {
+    height: 282px;
+}
+
+.card__text {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 21px;
+    padding-right: 15px;
+}
+
+.card__title {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 24px;
+    line-height: 1.21;
+    color: #000000;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.card__like {
+    transition: opacity .3s ease-in-out;
+    cursor: pointer;
+}
+
+.card__like:hover {
+    opacity: 0.6;
+}
+
+.card__like:active {
+    fill: #000000;
+}
