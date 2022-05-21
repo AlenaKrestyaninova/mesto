@@ -9,6 +9,10 @@
 @import url(../blocks/header/__logo/header__logo.css);
 
 
+/* Раздел popup*/
+@import url(../blocks/popup/popup.css);
+
+
 /* Раздел profile*/
 @import url(../blocks/profile/profile.css);
 

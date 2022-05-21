@@ -1,12 +1,137 @@
 .popup {
-    width: 100%;
-    height: 100%;
-    background-color: #000000;
-    opacity: 0.5;
-    position: absolute;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, .5);
+    display: none;
+    justify-content: center;
+}
+
+.popup_opened {
+    display: flex;
 }
 
 .popup__container {
-    max-width: 430px;
-    min-height: 330px;
+    width: 430px;
+    height: 330px;
+    background-color: white;
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+    position: relative;
+    margin-top: 195px;
+}
+
+.popup__close {
+    background-image: url(../../images/Close\ Icon.svg);
+    background-size: 32px 32px;
+    background-color: transparent;
+    width: 32px;
+    height: 32px;
+    border: none;
+    position: absolute;
+    top: -40px;
+    right: -40px;
+    cursor: pointer;
+    transition: opacity .3s ease-in-out;
+}
+
+.popup__close:hover {
+    opacity: 0.6;
+}
+
+.popup__title {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 24px;
+    line-height: 1.24;
+    color: #000000;
+    padding-top: 34px;
+    padding-left: 36px;
+    margin: 0;
+}
+
+.popup__form {
+    padding-top: 54px;
+    width: calc(100% - 2*36px);
+    margin: 0 auto;
+    outline: none;
+}
+
+.popup__input {
+    display: block;
+    width: 100%;
+    height: 27px;
+    padding: 0;
+    box-sizing: border-box;
+    border: none;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, .2);
+    margin-top: 30px;
+}
+
+.popup__input:first-of-type {
+    margin-top: 0;
+}
+
+.popup__input::placeholder {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    color: #000000;
+}
+
+.popup__submit {
+    display: block;
+    width: 100%;
+    height: 50px;
+    background-color: #000000;
+    border-radius: 2px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;
+    color: #FFFFFF;
+    margin: 48px auto 37px;
+    padding: 0;
+    transition: opacity .3s ease-in-out;
+}
+
+.popup__submit:hover {
+    opacity: 0.8;
+}
+
+/* Медиа-запрос для ширины 425px (меньше 768px)*/
+@media all and (max-width:767px) {
+    .popup__container {
+        max-width: calc(100% - 2*19px);
+        height: 322px;
+        margin-top: 123px;
+    }
+    .popup__close {
+        background-size: 20px 20px;
+        width: 20px;
+        height: 20px;
+        top: -36px;
+        right: 0;
+    }
+    .popup__title {
+        font-size: 18px;
+        line-height: 1.22;
+        padding-top: 25px;
+        padding-left: 22px;
+    }
+    .popup__form {
+        padding-top: 75px;
+        width: calc(100% - 2*22px);
+    }
+    .popup__submit {
+        font-size: 14px;
+        line-height: 1.21;
+    }
 }
