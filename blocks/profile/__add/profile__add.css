@@ -12,6 +12,10 @@
     justify-self: end;
     transition: opacity .3s ease-in-out;
     cursor: pointer;
+    background-image: url(../../../images/Add_Button.svg);
+    background-size: 22px 22px;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 .profile__add:hover {
@@ -23,5 +27,6 @@
     .profile__add {
         width: 100%;
         justify-self: center;
+        background-size: 16px 16px;
     }
 }

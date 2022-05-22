@@ -1,4 +1,5 @@
-.elements {
+.elements__container {
+    list-style: none;
     display: grid;
     grid-template-columns: repeat(3, 282px);
     column-gap: 17px;
@@ -6,11 +7,12 @@
     padding-top: 51px;
     margin: 0 auto;
     justify-content: space-around;
+    padding-left: 0;
 }
 
 /* Медиа-запрос для ширины 880px (меньше 880px)*/
 @media all and (max-width:918px) {
-    .elements {
+    .elements__container {
         grid-template-columns: repeat(2, 282px);
         padding-top: 36px;
     }
@@ -18,7 +20,7 @@
 
 /* Медиа-запрос для ширины 425px (меньше 768px)*/
 @media all and (max-width:767px) {
-    .elements {
+    .elements__container {
         grid-template-columns: 282px;
     }
 }

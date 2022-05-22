@@ -1,7 +1,8 @@
 .profile__info {
     display: flex;
-    width: 336px;
     padding-left: 30px;
+    box-sizing: border-box;
+    max-width: 610px;
 }
 
 /* Медиа-запрос для ширины 425px (меньше 768px)*/

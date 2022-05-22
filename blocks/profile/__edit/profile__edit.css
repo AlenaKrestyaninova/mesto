@@ -5,10 +5,16 @@
     background-color: transparent;
     text-align: center;
     margin-left: 18px;
+    margin-right: 18px;
     margin-top: 15px;
     padding: 0;
     transition: opacity .3s ease-in-out;
     cursor: pointer;
+    background-image: url(../../../images/Edit_Button.svg);
+    background-size: 10px 10px;
+    background-repeat: no-repeat;
+    background-position: center;
+    box-sizing: border-box;
 }
 
 .profile__edit:hover {
@@ -19,5 +25,10 @@
 @media all and (max-width:767px) {
     .profile__edit {
         margin-top: 8px;
+        margin-left: 10px;
+        margin-right: 10px;
+        background-size: 7.5px 7.5px;
+        width: 18px;
+        height: 18px;
     }
 }
