@@ -3,12 +3,12 @@
     padding-bottom: 60px;
 }
 
-.footer__copyright {
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 22px;
-    color: #545454;
-    margin: 0;
+
+
+/* Медиа-запрос для ширины 425px (меньше 768px)*/
+@media all and (max-width:767px) {
+    .footer {
+        padding-top: 48px;
+        padding-bottom: 36px;
+    }
 }

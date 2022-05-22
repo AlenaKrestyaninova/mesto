@@ -1,0 +1,23 @@
+.profile__edit {
+    width: 24px;
+    height: 24px;
+    border: 1px solid #FFFFFF;
+    background-color: transparent;
+    text-align: center;
+    margin-left: 18px;
+    margin-top: 15px;
+    padding: 0;
+    transition: opacity .3s ease-in-out;
+    cursor: pointer;
+}
+
+.profile__edit:hover {
+    opacity: 0.6;
+}
+
+/* Медиа-запрос для ширины 425px (меньше 768px)*/
+@media all and (max-width:767px) {
+    .profile__edit {
+        margin-top: 8px;
+    }
+}

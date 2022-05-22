@@ -1,0 +1,21 @@
+.popup__title {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 24px;
+    line-height: 1.24;
+    color: #000000;
+    padding-top: 34px;
+    padding-left: 36px;
+    margin: 0;
+}
+
+/* Медиа-запрос для ширины 425px (меньше 768px)*/
+@media all and (max-width:767px) {
+    .popup__title {
+        font-size: 18px;
+        line-height: 1.22;
+        padding-top: 25px;
+        padding-left: 22px;
+    }
+}

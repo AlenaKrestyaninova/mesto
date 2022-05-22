@@ -1,0 +1,12 @@
+.card__like {
+    transition: opacity .3s ease-in-out;
+    cursor: pointer;
+}
+
+.card__like:hover {
+    opacity: 0.6;
+}
+
+.card__like:active {
+    fill: #000000;
+}
