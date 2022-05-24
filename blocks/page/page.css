@@ -8,7 +8,7 @@
     box-sizing: border-box;
 }
 
-/* Медиа-запрос для ширины 880px (меньше 880px)*/
+/* Медиа-запрос для ширины 880px (меньше 918px)*/
 @media all and (max-width:918px) {
     .page {
         max-width: calc(100% - 2*19px);
