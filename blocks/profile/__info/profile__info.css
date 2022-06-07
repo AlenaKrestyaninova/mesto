@@ -1,15 +1,16 @@
 .profile__info {
     display: flex;
-    width: 336px;
-    padding-left: 30px;
+    margin-left: 30px;
+    box-sizing: border-box;
+    max-width: 610px;
 }
 
 /* Медиа-запрос для ширины 425px (меньше 768px)*/
 @media all and (max-width:767px) {
     .profile__info {
-        padding-top: 36px;
+        margin-top: 36px;
         justify-content: center;
-        padding-left: 0;
+        margin-left: 0;
         width: 100%;
     }
 }

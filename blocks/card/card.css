@@ -4,4 +4,6 @@
     background-color: #FFFFFF;
     box-sizing: border-box;
     overflow: hidden;
+    width: 282px;
+    position: relative;
 }
