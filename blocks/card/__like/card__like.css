@@ -5,13 +5,21 @@
     width: 19px;
     border: none;
     padding: 0;
+<<<<<<< HEAD
     background-color: transparent;
+=======
+    background: url(../../../images/like.svg) center no-repeat;
+    background-size: 100%;
+    background-color: transparent;
+    box-sizing: border-box;
+>>>>>>> develop
 }
 
 .card__like:hover {
     opacity: 0.6;
 }
 
-.card__like:active {
-    fill: #000000;
+.card__like_active {
+    opacity: 1;
+    background: url(../../../images/like-active.svg) center no-repeat;
 }

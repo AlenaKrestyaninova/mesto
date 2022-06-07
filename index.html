@@ -15,9 +15,13 @@
 
     <main class="content">
 
+<<<<<<< HEAD
       <div class="popup">
+=======
+      <div class="popup popup_type_edit">
+>>>>>>> develop
         <div class="popup__container">
-          <button class="popup__close"></button>
+          <button class="popup__close popup__close_type_edit"></button>
           <h2 class="popup__title">Редактировать профиль</h2>
           <form action="#" class="popup__form">
             <input type="text" class="popup__input popup__input_type_name" placeholder="Имя" name="first-name">
@@ -26,6 +30,31 @@
           </form>
         </div>
       </div>
+<<<<<<< HEAD
+=======
+
+      <div class="popup popup_type_add">
+        <div class="popup__container">
+          <button class="popup__close popup__close_type_add"></button>
+          <h2 class="popup__title">Новое место</h2>
+          <form action="#" class="popup__form popup__form_type_add">
+            <input type="text" class="popup__input popup__input_type_place" placeholder="Название" name="place-name">
+            <input type="text" class="popup__input popup__input_type_image" placeholder="Ссылка на картинку" name="image-link">
+            <button type="submit" class="popup__submit">Сохранить</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="popup popup_type_photo">
+        <div class="popup__image-container">
+          <button class="popup__close popup__close_type_photo"></button>
+          <figure class="popup__figure">
+            <img alt="фото" class="popup__img">
+            <figcaption class="popup__img-title"></figcaption>
+          </figure>
+        </div>
+      </div>
+>>>>>>> develop
 
       <section class="profile">
         <div class="profile__avatar"></div>
@@ -41,6 +70,7 @@
 
       <section class="elements">
         <ul class="elements__container">
+<<<<<<< HEAD
           <li class="card">
             <img src="./images/Karachaevsk.png" alt="Карачаевск" class="card__img">
             <div class="card__text">
@@ -95,6 +125,9 @@
               </button>
             </div>
           </li>
+=======
+          
+>>>>>>> develop
         </ul>
       </section>
     </main>
@@ -104,6 +137,17 @@
     </footer>
     
   </div>
+
+  <template class="card-template">
+    <li class="card">
+      <button class="card__trash"></button>
+      <img alt="фото" class="card__img">
+      <div class="card__text">
+        <h2 class="card__title"></h2>
+        <button class="card__like"></button>
+      </div>
+    </li>
+  </template>
 
 <script src="./scripts/index.js"></script>
 
