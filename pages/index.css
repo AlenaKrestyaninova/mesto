@@ -20,6 +20,13 @@
 @import url(../blocks/popup/__submit/popup__submit.css);
 
 
+/* Раздел popup с картинкой*/
+@import url(../blocks/popup/__image-container/popup__image-container.css);
+@import url(../blocks/popup/__figure/popup__figure.css);
+@import url(../blocks/popup/__img/popup__img.css);
+@import url(../blocks/popup/__img-title/popup__img-title.css);
+
+
 /* Раздел profile*/
 @import url(../blocks/profile/profile.css);
 @import url(../blocks/profile/__avatar/profile__avatar.css);

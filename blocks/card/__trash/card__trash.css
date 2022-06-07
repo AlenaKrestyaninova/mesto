@@ -9,6 +9,7 @@
     width: 18px;
     height: 19px;
     transition: opacity .3s ease-in-out;
+    padding: 0;
 }
 
 .card__trash:hover {
