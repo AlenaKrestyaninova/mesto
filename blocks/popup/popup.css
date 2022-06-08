@@ -8,11 +8,8 @@
     background-color: rgba(0, 0, 0, .5);
     justify-content: center;
     align-items: center;
-<<<<<<< HEAD
-=======
     z-index: 1;
     visibility: hidden;
     opacity: 0;
     transition: visibility 0s, opacity 0.5s linear;
->>>>>>> develop
 }

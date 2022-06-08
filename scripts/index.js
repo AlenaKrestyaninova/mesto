@@ -16,11 +16,6 @@ let profileSubtitle = document.querySelector('.profile__subtitle')
 /* Функции для открытия и закрытия попапов*/
 function openPopup(popupElement) {
     popupElement.classList.add('popup_opened');
-<<<<<<< HEAD
-    nameInput.value = profileTitle.textContent;
-    jobInput.value = profileSubtitle.textContent;
-=======
->>>>>>> develop
 }
 
 function closePopup(popupElement) {
@@ -29,13 +24,9 @@ function closePopup(popupElement) {
 
 /* Что будет, если ткнуть на кнопку открытия*/
 editButton.addEventListener('click', function(){
-<<<<<<< HEAD
-    openPopup(popup);
-=======
     openPopup(editPopup);
     nameInput.value = profileTitle.textContent;
     jobInput.value = profileSubtitle.textContent;
->>>>>>> develop
 });
 
 addButton.addEventListener('click', function(){
@@ -115,7 +106,7 @@ const createCard = (nameValue, linkValue) => {
       });
     card.querySelector('.card__trash').addEventListener('click', deleteCard);
     card.querySelector('.card__img').addEventListener('click', e => {
-        openPhotoPopup(evt.target.closest('.card'));
+        openPhotoPopup(e);
       });
     return card;
 };
@@ -139,14 +130,9 @@ initialCards.forEach(card => addCard(card.name, card.link))
 cardFormElement.addEventListener('submit', handleCardSubmit);
 
 /* Открыть попап с картинкой*/
-const card = document.querySelector('.card');
-const cardImg = card.querySelector('.card__img');
-const cardCapture = card.querySelector('.card__title');
-const popupImg = card.querySelector('.popup__img');
-const popupCapture = card.querySelector('.popup__img-title');
-
 function openPhotoPopup(e) {
-    popupImg.src = cardImg.src; 
-    popupCapture.value = cardCapture.textContent;
+  const card = getCardByEvent(e); 
+    photoPopup.querySelector(".popup__img").src = card.querySelector('.card__img').src;
+    photoPopup.querySelector(".popup__img-title").textContent = card.querySelector('.card__title').textContent;
     openPopup(photoPopup)
-  }
+}

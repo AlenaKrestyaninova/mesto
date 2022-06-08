@@ -5,14 +5,10 @@
     width: 19px;
     border: none;
     padding: 0;
-<<<<<<< HEAD
-    background-color: transparent;
-=======
     background: url(../../../images/like.svg) center no-repeat;
     background-size: 100%;
     background-color: transparent;
     box-sizing: border-box;
->>>>>>> develop
 }
 
 .card__like:hover {
