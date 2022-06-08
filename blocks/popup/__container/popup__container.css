@@ -11,9 +11,6 @@
 @media all and (max-width:767px) {
     .popup__container {
         max-width: calc(100% - 2*19px);
-<<<<<<< HEAD
-=======
         padding-top: 25px;
->>>>>>> develop
     }
 }

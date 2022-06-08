@@ -19,14 +19,5 @@
 }
 
 .popup__input::placeholder {
-<<<<<<< HEAD
-    font-family: 'Inter', Arial, sans-serif;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 17px;
-    color: #000000;
-=======
-    color: #C4C4C4;;
->>>>>>> develop
+    color: #C4C4C4;
 }
