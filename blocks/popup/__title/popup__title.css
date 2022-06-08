@@ -6,7 +6,8 @@
     line-height: 1.24;
     color: #000000;
     padding-left: 36px;
-
+    padding-top: 34px;
+    margin: 0;
 }
 
 /* Медиа-запрос для ширины 425px (меньше 768px)*/
@@ -15,5 +16,6 @@
         font-size: 18px;
         line-height: 1.22;
         padding-left: 22px;
+        padding-top: 25px;
     }
 }

@@ -8,10 +8,11 @@
     line-height: 22px;
     text-align: center;
     color: #FFFFFF;
-    margin: 48px auto 37px;
+    margin: 48px auto 36px;
     padding: 0;
     transition: opacity .3s ease-in-out;
     border: none;
+    cursor: pointer;
 }
 
 .popup__submit:hover {
@@ -23,5 +24,7 @@
     .popup__submit {
         font-size: 14px;
         line-height: 1.21;
+        margin-bottom: 25px;
+        margin-top: 45px;
     }
 }
