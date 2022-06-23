@@ -1,10 +1,11 @@
-const editButton = document.querySelector('.profile__edit');
-const addButton = document.querySelector('.profile__add');
-const editPopup = document.querySelector('.popup_type_edit');
-const addPopup = document.querySelector('.popup_type_add');
+const buttonEdit = document.querySelector('.profile__edit');
+const buttonAdd = document.querySelector('.profile__add');
+const popupEdit = document.querySelector('.popup_type_edit');
+const popupAdd = document.querySelector('.popup_type_add');
 const photoPopup = document.querySelector('.popup_type_photo');
 
-const editFormElement = document.querySelector('.popup__form_type_edit');
+const formElementEdit = document.querySelector('.popup__form_type_edit');
+const formElementAdd = document.querySelector('.popup__form_type_add');
 const nameInput = document.querySelector('.popup__input_type_name');
 const jobInput = document.querySelector('.popup__input_type_occupation');
 const profileTitle = document.querySelector('.profile__title');
@@ -31,8 +32,8 @@ function closePopup(popupElement) {
 
 /* Функция для закрытия по Esc*/
 const closeByEsc = (evt) => {
-    const openedPopup = document.querySelector('.popup_opened');
     if (evt.key === 'Escape') {
+        const openedPopup = document.querySelector('.popup_opened');
         closePopup (openedPopup)
     }
 };
@@ -56,11 +57,11 @@ const createCard = (nameValue, linkValue) => {
     cardImage.src = linkValue;
     card.querySelector('.card__like').addEventListener('click', function (evt) {
         evt.target.classList.toggle('card__like_active');
-      });
+    });
     card.querySelector('.card__trash').addEventListener('click', deleteCard);
     cardImage.addEventListener('click', e => {
         openPhotoPopup(e);
-      });
+    });
     return card;
 };
 
@@ -75,8 +76,10 @@ const handleAddCardSubmit = e => {
     const nameValue = cardInputPlaceElement.value;
     const linkValue = cardInputImageElement.value;
     addCard(nameValue, linkValue);
-    closePopup(addPopup);
+    closePopup(popupAdd);
     cardFormElement.reset();
+    const ButtonSubmitDisabled = formElementAdd.querySelector('.popup__submit_add');
+    setDisabledButton(ButtonSubmitDisabled)
 };
 
 initialCards.forEach(card => addCard(card.name, card.link));
@@ -85,10 +88,11 @@ cardFormElement.addEventListener('submit', handleAddCardSubmit);
 
 /* Открыть попап с картинкой*/
 function openPhotoPopup(e) {
-    const card = getCardByEvent(e); 
-    photoPopup.querySelector(".popup__img").src = card.querySelector('.card__img').src;
+    const card = getCardByEvent(e);
+    const photoPopupImg = photoPopup.querySelector(".popup__img");
+    photoPopupImg.src = card.querySelector('.card__img').src;
     photoPopup.querySelector(".popup__img-title").textContent = card.querySelector('.card__title').textContent;
-    photoPopup.querySelector(".popup__img").alt = card.querySelector('.card__title').textContent;
+    photoPopupImg.alt = card.querySelector('.card__title').textContent;
     openPopup(photoPopup);
 };
 
@@ -96,14 +100,14 @@ function openPhotoPopup(e) {
 
 
 /* Что будет, если ткнуть на кнопку открытия*/
-editButton.addEventListener('click', function(){
+buttonEdit.addEventListener('click', function(){
     nameInput.value = profileTitle.textContent;
     jobInput.value = profileSubtitle.textContent;
-    openPopup(editPopup);
+    openPopup(popupEdit);
 });
 
-addButton.addEventListener('click', function(){
-    openPopup(addPopup);
+buttonAdd.addEventListener('click', function(){
+    openPopup(popupAdd);
 });
 
 /* Что будет, если ткнуть на кнопку закрытия или на оверлей*/
@@ -119,25 +123,25 @@ popupList.forEach((popupElement) => {
 
 
 
-editFormElement.addEventListener('submit', function(event){
+formElementEdit.addEventListener('submit', function(event){
     event.preventDefault();
     profileTitle.textContent = nameInput.value;
     profileSubtitle.textContent = jobInput.value;
-    closePopup(editPopup);
+    closePopup(popupEdit);
 });
 
 
 
 
 
-
-
-enableValidation({
+const config = {
     formSelector: '.popup__form',
     inputSelector: '.popup__input',
     submitButtonSelector: '.popup__submit',
     inactiveButtonClass: 'popup__submit_disabled',
     inputErrorClass: 'popup__input_type_error',
     errorClass: 'popup__input-error_active'
-}); 
+};
+
+enableValidation(config); 
 
