@@ -19,6 +19,13 @@
     opacity: 0.8;
 }
 
+.popup__submit:disabled {
+    background-color: transparent;
+    opacity: 0.2;
+    color: #000000;
+    border: 1px solid #000000;
+}
+
 /* Медиа-запрос для ширины 425px (меньше 768px)*/
 @media all and (max-width:767px) {
     .popup__submit {
