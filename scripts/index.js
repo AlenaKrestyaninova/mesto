@@ -17,7 +17,8 @@ const cardInputPlaceElement = cardFormElement.querySelector('.popup__input_type_
 const cardInputImageElement = cardFormElement.querySelector('.popup__input_type_image');
 const cardTemplateElement = document.querySelector('.card-template');
 
-const popupList = document.querySelectorAll('.popup')
+const popupList = document.querySelectorAll('.popup');
+const formCardSubmitButton = formElementAdd.querySelector('.popup__submit_add');
 
 /* Функции для открытия и закрытия попапов*/
 function openPopup(popupElement) {
@@ -78,8 +79,7 @@ const handleAddCardSubmit = e => {
     addCard(nameValue, linkValue);
     closePopup(popupAdd);
     cardFormElement.reset();
-    const ButtonSubmitDisabled = formElementAdd.querySelector('.popup__submit_add');
-    setDisabledButton(ButtonSubmitDisabled)
+    setDisabledButton(formCardSubmitButton)
 };
 
 initialCards.forEach(card => addCard(card.name, card.link));

@@ -27,13 +27,15 @@ const hasInvalidInput = (inputList) => {
 };
 
 const setDisabledButton = (buttonElement) => {
+    const { inactiveButtonClass } = config;
     buttonElement.setAttribute('disabled', true);
-    buttonElement.classList.add('popup__submit_disabled');
+    buttonElement.classList.add(inactiveButtonClass);
 };
 
 const setEnabledButton = (buttonElement) => {
+    const { inactiveButtonClass } = config;
     buttonElement.removeAttribute('disabled', true);
-    buttonElement.classList.remove('popup__submit_disabled');
+    buttonElement.classList.remove(inactiveButtonClass);
 }
 
 const toggleButtonState = (buttonElement, inputList) => {
