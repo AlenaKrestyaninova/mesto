@@ -79,7 +79,7 @@ const handleAddCardSubmit = e => {
     addCard(nameValue, linkValue);
     closePopup(popupAdd);
     cardFormElement.reset();
-    setDisabledButton(formCardSubmitButton)
+    setDisabledButton(formCardSubmitButton, config)
 };
 
 initialCards.forEach(card => addCard(card.name, card.link));
