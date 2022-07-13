@@ -1,15 +1,16 @@
 import {openPhotoPopup} from './utils.js';
-import {initialCards} from './cards.js';
+
 
 class Card {
-    constructor (name, link){
+    constructor (name, link, cardSelector){
       this._name = name;
       this._link = link;
+      this._cardSelector = cardSelector;
     }
 
     _getTemplate(){
       const cardElement = document
-        .querySelector('.card-template')
+        .querySelector(this._cardSelector)
         .content
         .querySelector('.card')
         .cloneNode(true);
@@ -46,6 +47,7 @@ class Card {
 
       this._element.querySelector('.card__title').textContent =this._name;
       this._element.querySelector('.card__img').src =this._link;
+      this._element.querySelector('.card__img').alt =this._name;
 
       this._setEventListeners();
 
@@ -53,12 +55,6 @@ class Card {
     }
 }
 
-const cardContainer = document.querySelector('.elements__container');
 
-initialCards.forEach(item =>{
-  const card = new Card(item.name, item.link);
-  const cardElement = card.generateCard();
-  cardContainer.append(cardElement);
-})
 
 export default Card;

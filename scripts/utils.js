@@ -1,3 +1,7 @@
+const photoPopup = document.querySelector('.popup_type_photo');
+const photoPopupImg = photoPopup.querySelector('.popup__img');
+const photoPopupText = photoPopup.querySelector('.popup__img-title');
+
 /* Открыть попап*/
 function openPopup(popupElement) {
     popupElement.classList.add('popup_opened');
@@ -20,11 +24,8 @@ const closeByEsc = (evt) => {
 
 /* Открыть попап с картинкой*/
 function openPhotoPopup(name, link) {
-    const photoPopup = document.querySelector('.popup_type_photo');
-    const photoPopupImg = photoPopup.querySelector('.popup__img');
     photoPopupImg.src = link;
     photoPopupImg.alt = name;
-    const photoPopupText = photoPopup.querySelector('.popup__img-title');
     photoPopupText.textContent = name;
     openPopup(photoPopup);
 };

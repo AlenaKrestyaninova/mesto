@@ -1,3 +1,4 @@
+import {initialCards} from './cards.js';
 import Card from './Card.js';
 import FormValidator from './FormValidator.js';
 import {openPopup, closePopup} from './utils.js';
@@ -20,19 +21,23 @@ const cardInputPlaceElement = formElementAdd.querySelector('.popup__input_type_p
 const cardInputImageElement = formElementAdd.querySelector('.popup__input_type_image');
 const cardContainer = document.querySelector('.elements__container');
 
+
+
 const popupList = document.querySelectorAll('.popup');
 
+const addCard = (nameValue, linkValue) =>{
+    const card = new Card(nameValue, linkValue, '.card-template');
+    const cardElement = card.generateCard();
+    cardContainer.prepend(cardElement);
+}
 
 const handleAddCardSubmit = e => {
     e.preventDefault();
     const nameValue = cardInputPlaceElement.value;
     const linkValue = cardInputImageElement.value;
-    const card = new Card(nameValue, linkValue);
-    const cardElement = card.generateCard();
-    cardContainer.prepend(cardElement);
+    addCard(nameValue, linkValue);
     closePopup(popupAdd);
     formElementAdd.reset();
-    formValidator.toggleButtonState();
 };
 
 /* Сабмит попапа для профиля*/
@@ -51,11 +56,13 @@ buttonEdit.addEventListener('click', function(){
     nameInput.value = profileTitle.textContent;
     jobInput.value = profileSubtitle.textContent;
     openPopup(popupEdit);
+    formValidatorEdit.resetError();
 });
 
 /* Что будет, если ткнуть на кнопку открытия попапа для карточек*/
 buttonAdd.addEventListener('click', function(){
     openPopup(popupAdd);
+    formValidatorAdd.resetError();
 });
 
 /* Что будет, если ткнуть на кнопку закрытия или на оверлей*/
@@ -70,6 +77,15 @@ popupList.forEach((popupElement) => {
 })
 
 
+
+
+initialCards.forEach(item =>{
+    addCard(item.name, item.link);
+})
+
+
+
+
 const config = {
     formSelector: '.popup__form',
     inputSelector: '.popup__input',
@@ -79,9 +95,10 @@ const config = {
     errorClass: 'popup__input-error_active'
 };
 
-const formList = document.querySelectorAll('.popup__form');
 
-formList.forEach(formElement => {
-    const formValidator = new FormValidator(config, formElement);
-    formValidator.enableValidation();
-})
+
+const formValidatorAdd = new FormValidator(config, formElementAdd);
+formValidatorAdd.enableValidation();
+
+const formValidatorEdit = new FormValidator(config, formElementEdit);
+formValidatorEdit.enableValidation();
