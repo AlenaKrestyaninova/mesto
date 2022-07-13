@@ -21,13 +21,16 @@ const cardInputPlaceElement = formElementAdd.querySelector('.popup__input_type_p
 const cardInputImageElement = formElementAdd.querySelector('.popup__input_type_image');
 const cardContainer = document.querySelector('.elements__container');
 
-
-
 const popupList = document.querySelectorAll('.popup');
 
-const addCard = (nameValue, linkValue) =>{
+const createCard = (nameValue, linkValue) =>{
     const card = new Card(nameValue, linkValue, '.card-template');
     const cardElement = card.generateCard();
+    return cardElement;
+}
+
+const addCard = (nameValue, linkValue) =>{
+    const cardElement = createCard(nameValue, linkValue);
     cardContainer.prepend(cardElement);
 }
 
