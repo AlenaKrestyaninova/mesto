@@ -1,7 +1,10 @@
-import {initialCards} from './cards.js';
-import Card from './Card.js';
-import FormValidator from './FormValidator.js';
-import {openPopup, closePopup} from './utils.js';
+import './../pages/index.css';
+
+import {initialCards} from './../utils/initialCards.js';
+import Card from './../components/Card';
+import FormValidator from './../components/FormValidator.js';
+import {openPopup, closePopup} from './../utils/utils.js';
+import Section from './../components/Section.js';
 
 
 const buttonEdit = document.querySelector('.profile__edit');
@@ -80,11 +83,22 @@ popupList.forEach((popupElement) => {
 })
 
 
+const cardsList = new Section({
+    data: initialCards,
+    renderer: (cardItem) => {
+        const card = new Card(cardItem.name, cardItem.link, '.card-template');
+        const cardElement = card.generateCard();
+        cardsList.addItem(cardElement);
+    }
+    },
+    cardContainer
+);
 
+cardsList.renderItems();
 
-initialCards.forEach(item =>{
-    addCard(item.name, item.link);
-})
+// initialCards.forEach(item =>{
+//     addCard(item.name, item.link);
+// })
 
 
 

@@ -1,6 +1,4 @@
-const photoPopup = document.querySelector('.popup_type_photo');
-const photoPopupImg = photoPopup.querySelector('.popup__img');
-const photoPopupText = photoPopup.querySelector('.popup__img-title');
+import {photoPopup, photoPopupImg, photoPopupText} from './constants.js';
 
 /* Открыть попап*/
 function openPopup(popupElement) {

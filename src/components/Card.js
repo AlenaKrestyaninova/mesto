@@ -1,4 +1,4 @@
-import {openPhotoPopup} from './utils.js';
+import {openPhotoPopup} from './../utils/utils.js';
 
 
 class Card {
