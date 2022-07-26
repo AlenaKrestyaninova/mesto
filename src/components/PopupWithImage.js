@@ -1,18 +1,20 @@
-import {photoPopupImg, photoPopupText} from './constants.js';
+//const photoPopup = document.querySelector('.popup_type_photo');
+//const photoPopupImg = photoPopup.querySelector('.popup__img');
+//const photoPopupText = photoPopup.querySelector('.popup__img-title');
 
-class PopupWithImage extends Popup{
+import Popup from './Popup.js';
+
+export default class PopupWithImage extends Popup{
     constructor(popupSelector) {      
         super(popupSelector);
-        this._name = this.querySelector('.popup__img');
-        this._link = this.querySelector('.popup__img-title');
+        this._popupImg = document.querySelector('.popup__img');
+        this._popupTitle = document.querySelector('.popup__img-title');
     };
 
     open(name, link) {
         super.open();
-        this.photoPopupImg.src = link;
-        this.photoPopupImg.alt = name;
-        this.photoPopupText.textContent = name;
+        this._popupImg.src = link;
+        this._popupImg.alt = name;
+        this._popupTitle.textContent = name;
     };
 }
-
-export default PopupWithImage;

@@ -1,11 +1,15 @@
 import {openPhotoPopup} from './../utils/utils.js';
-
+import PopupWithImage from './../components/PopupWithImage.js';
+//import popupPhoto from './../scripts/index.js';
+//const popupPhoto = new PopupWithImage('.popup_type_photo');
+import {handleCardClick} from './../scripts/index.js';
 
 class Card {
-    constructor (name, link, cardSelector){
+    constructor (name, link, cardSelector, handleCardClick){
       this._name = name;
       this._link = link;
       this._cardSelector = cardSelector;
+      this._handleCardClick = handleCardClick;
     }
 
     _getTemplate(){
@@ -27,8 +31,9 @@ class Card {
           this._likeCard(evt);
         });
       this._element.querySelector('.card__img')
-        .addEventListener('click', (evt) => {
-          openPhotoPopup(this._name, this._link);
+        .addEventListener('click', () => {
+          console.log(123);
+          handleCardClick();
         });
     }
 

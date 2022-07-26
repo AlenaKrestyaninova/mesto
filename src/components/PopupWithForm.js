@@ -1,4 +1,6 @@
-export default class Popup {
+import Popup from './Popup.js';
+
+export default class PopupWithForm extends Popup {
     constructor(popupSelector) {      
         this._popupSelector = popupSelector;
     };
@@ -21,7 +23,7 @@ export default class Popup {
     };
 
     setEventListeners(){
-        this.addEventListener('click', e => {
+        popupElement.addEventListener('click', e => {
             const isOverlay = e.target.classList.contains('popup');
             const isCloseBtn = e.target.classList.contains('popup__close');
             if (isOverlay || isCloseBtn) {

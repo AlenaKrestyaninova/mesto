@@ -5,6 +5,9 @@ import Card from './../components/Card';
 import FormValidator from './../components/FormValidator.js';
 import {openPopup, closePopup} from './../utils/utils.js';
 import Section from './../components/Section.js';
+//import Popup from './../components/Popup.js';
+import PopupWithImage from './../components/PopupWithImage.js';
+import { photoPopup } from '../utils/constants';
 
 
 const buttonEdit = document.querySelector('.profile__edit');
@@ -83,15 +86,15 @@ popupList.forEach((popupElement) => {
 })
 
 
-const cardsList = new Section({
-    data: initialCards,
+const cardsList = new Section ({
+    items: initialCards,
     renderer: (cardItem) => {
         const card = new Card(cardItem.name, cardItem.link, '.card-template');
         const cardElement = card.generateCard();
         cardsList.addItem(cardElement);
     }
     },
-    cardContainer
+    '.elements__container'
 );
 
 cardsList.renderItems();
@@ -100,7 +103,11 @@ cardsList.renderItems();
 //     addCard(item.name, item.link);
 // })
 
+const popupPhoto = new PopupWithImage('.popup_type_photo');
 
+export const handleCardClick = (name, link) => {
+    popupPhoto.open(name, link)
+}
 
 
 const config = {
