@@ -1,8 +1,4 @@
-import {openPhotoPopup} from './../utils/utils.js';
-import PopupWithImage from './../components/PopupWithImage.js';
-//import popupPhoto from './../scripts/index.js';
-//const popupPhoto = new PopupWithImage('.popup_type_photo');
-import {handleCardClick} from './../scripts/index.js';
+import {handleCardClick} from '../pages/index.js';
 
 class Card {
     constructor (name, link, cardSelector, handleCardClick){

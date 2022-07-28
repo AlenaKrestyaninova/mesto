@@ -1,5 +1,4 @@
 import Popup from './Popup.js';
-import {formValidatorAdd} from './../scripts/index.js';
 
 export default class PopupWithForm extends Popup {
     constructor(popupSelector, {handleFormSubmit}) {      
@@ -21,7 +20,6 @@ export default class PopupWithForm extends Popup {
 
     close() {
         super.close();
-        formValidatorAdd.resetError();
         this._formElement.reset();
     };
 
