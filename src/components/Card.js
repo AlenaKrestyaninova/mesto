@@ -32,8 +32,7 @@ class Card {
         });
       this._element.querySelector('.card__img')
         .addEventListener('click', () => {
-          console.log(123);
-          handleCardClick();
+          handleCardClick(this._name, this._link);
         });
     }
 

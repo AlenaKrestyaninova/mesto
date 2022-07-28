@@ -1,7 +1,3 @@
-//const photoPopup = document.querySelector('.popup_type_photo');
-//const photoPopupImg = photoPopup.querySelector('.popup__img');
-//const photoPopupText = photoPopup.querySelector('.popup__img-title');
-
 import Popup from './Popup.js';
 
 export default class PopupWithImage extends Popup{

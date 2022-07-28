@@ -1,34 +1,37 @@
 import Popup from './Popup.js';
+import {formValidatorAdd} from './../scripts/index.js';
 
 export default class PopupWithForm extends Popup {
-    constructor(popupSelector) {      
+    constructor(popupSelector, {handleFormSubmit}) {      
+        super(popupSelector);
         this._popupSelector = popupSelector;
+        this._popupElement = document.querySelector(this._popupSelector);
+        this._handleFormSubmit = handleFormSubmit;        
+        this._formElement = this._popupElement.querySelector('.popup__form');
+        this._inputList = this._popupElement.querySelectorAll('.popup__input');
     };
 
-    open() {
-        this.classList.add('popup_opened');
-        document.addEventListener ('keydown', closeByEsc);
-    };
+    _getInputValues() {
+        const formValues = {};
+        this._inputList.forEach(input => {
+            formValues[input.name] = input.value;
+        })
+        return formValues;
+    } 
 
     close() {
-        this.classList.remove('popup_opened');
-        document.removeEventListener ('keydown', closeByEsc);
+        super.close();
+        formValidatorAdd.resetError();
+        this._formElement.reset();
     };
 
-    _handleEscClose(evt){
-        if (evt.key === 'Escape') {
-            const openedPopup = document.querySelector('.popup_opened');
-            close(openedPopup)
-        }
-    };
-
-    setEventListeners(){
-        popupElement.addEventListener('click', e => {
-            const isOverlay = e.target.classList.contains('popup');
-            const isCloseBtn = e.target.classList.contains('popup__close');
-            if (isOverlay || isCloseBtn) {
-                close(popupElement);
-            }
-        })
+    setEventListeners() {
+        super.setEventListeners();
+        this._formElement.addEventListener('submit', (e) => {
+            e.preventDefault();
+            this._handleFormSubmit(this._getInputValues());
+            this.close();
+            this._formElement.reset();
+        });
     }
 }

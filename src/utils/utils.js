@@ -12,20 +12,20 @@ function closePopup(popupElement) {
     document.removeEventListener ('keydown', closeByEsc);
 };
 
-/* Функция для закрытия по Esc*/
-const closeByEsc = (evt) => {
-    if (evt.key === 'Escape') {
-        const openedPopup = document.querySelector('.popup_opened');
-        closePopup (openedPopup)
-    }
-};
+// /* Функция для закрытия по Esc*/
+// const closeByEsc = (evt) => {
+//     if (evt.key === 'Escape') {
+//         const openedPopup = document.querySelector('.popup_opened');
+//         closePopup (openedPopup)
+//     }
+// };
 
-/* Открыть попап с картинкой*/
-function openPhotoPopup(name, link) {
-    photoPopupImg.src = link;
-    photoPopupImg.alt = name;
-    photoPopupText.textContent = name;
-    openPopup(photoPopup);
-};
+// /* Открыть попап с картинкой*/
+// function openPhotoPopup(name, link) {
+//     photoPopupImg.src = link;
+//     photoPopupImg.alt = name;
+//     photoPopupText.textContent = name;
+//     openPopup(photoPopup);
+// };
 
-export {openPopup, closePopup, closeByEsc, openPhotoPopup}
+export {openPopup, closePopup}
