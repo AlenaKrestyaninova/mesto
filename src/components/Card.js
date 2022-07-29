@@ -1,5 +1,3 @@
-import {handleCardClick} from '../pages/index.js';
-
 class Card {
     constructor (name, link, cardSelector, handleCardClick){
       this._name = name;
@@ -19,8 +17,8 @@ class Card {
 
     _setEventListeners(){
       this._element.querySelector('.card__trash')
-        .addEventListener('click', (evt) => {
-          this._deleteCard(evt);
+        .addEventListener('click', () => {
+          this._deleteCard();
         });
       this._element.querySelector('.card__like')
         .addEventListener('click', (evt) => {
@@ -28,17 +26,15 @@ class Card {
         });
       this._element.querySelector('.card__img')
         .addEventListener('click', () => {
-          handleCardClick(this._name, this._link);
+          this._handleCardClick(this._name, this._link);
         });
     }
 
     _likeCard(evt){
-      evt.preventDefault();
       evt.target.classList.toggle('card__like_active');
     }
 
-    _deleteCard(evt){
-      evt.preventDefault();
+    _deleteCard(){
       this._element.remove();
     }
 

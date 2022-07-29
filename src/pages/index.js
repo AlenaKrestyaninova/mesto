@@ -7,24 +7,17 @@ import Section from '../components/Section.js';
 import PopupWithImage from '../components/PopupWithImage.js';
 import PopupWithForm from '../components/PopupWithForm.js';
 import UserInfo from '../components/UserInfo.js';
-import {buttonEdit, buttonAdd, formElementEdit, formElementAdd, nameInput, jobInput, cardContainer} from '../utils/constants.js';
-
-const config = {
-    formSelector: '.popup__form',
-    inputSelector: '.popup__input',
-    submitButtonSelector: '.popup__submit',
-    inactiveButtonClass: 'popup__submit_disabled',
-    inputErrorClass: 'popup__input_type_error',
-    errorClass: 'popup__input-error_active'
-};
+import {buttonEdit, buttonAdd, formElementEdit, formElementAdd, nameInput, jobInput, cardContainer, config} from '../utils/constants.js';
 
 const userInfo = new UserInfo('.profile__title', '.profile__subtitle');
 
-
+const handleCardClick = (name, link) => {
+    popupPhoto.open(name, link)
+};
 
 /* Создание карточек*/
 const createCard = (nameValue, linkValue) =>{
-    const card = new Card(nameValue, linkValue, '.card-template');
+    const card = new Card(nameValue, linkValue, '.card-template', handleCardClick);
     const cardElement = card.generateCard();
     return cardElement;
 }
@@ -49,9 +42,7 @@ cardsList.renderItems();
 const popupPhoto = new PopupWithImage('.popup_type_photo');
 popupPhoto.setEventListeners();
 
-export const handleCardClick = (name, link) => {
-    popupPhoto.open(name, link)
-};
+
 
 /* Создаем экземпляр попапа для добавления карточек*/
 const popupAdd = new PopupWithForm(
