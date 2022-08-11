@@ -21,8 +21,8 @@
           <form action="#" class="popup__form popup__form_type_edit" novalidate>
             <input type="text" class="popup__input popup__input_type_name" id="name-input" placeholder="Имя" name="name" required minlength="2" maxlength="40">
             <span class="popup__input-error" id="name-input-error"></span>
-            <input type="text" class="popup__input popup__input_type_occupation" id="job-input" placeholder="Род занятий" name="job" required minlength="2" maxlength="200">
-            <span class="popup__input-error" id="job-input-error"></span>
+            <input type="text" class="popup__input popup__input_type_about" id="about-input" placeholder="Род занятий" name="about" required minlength="2" maxlength="200">
+            <span class="popup__input-error" id="about-input-error"></span>
             <button type="submit" class="popup__submit popup__submit_edit">Сохранить</button>
           </form>
         </div>
@@ -52,8 +52,32 @@
         </div>
       </div>
 
+      <div class="popup popup_type_delete">
+        <div class="popup__container">
+          <button class="popup__close"></button>
+          <h2 class="popup__title">Вы уверены?</h2>
+          <form action="#" class="popup__form popup__form_type_delete" novalidate>
+            <button class="popup__submit popup__submit_delete">Да</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="popup popup_type_avatar">
+        <div class="popup__container">
+          <button class="popup__close"></button>
+          <h2 class="popup__title">Обновить аватар</h2>
+          <form action="#" class="popup__form popup__form_type_avatar" novalidate>
+            <input type="url" class="popup__input popup__input_type_avatar" id="avatar-input" placeholder="Ссылка на картинку" name="avatar" required>
+            <span class="popup__input-error" id="avatar-input-error"></span>
+            <button type="submit" class="popup__submit popup__submit_add">Сохранить</button>
+          </form>
+        </div>
+      </div>
+
       <section class="profile">
-        <div class="profile__avatar"></div>
+        <div class="profile__avatar">
+          <img class="profile__avatar-img" src="images/Avatar.bf10f5cc64fa199ad3c5.png" alt="аватар">
+        </div>
         <div class="profile__info">
           <div class="profile__text">
             <h1 class="profile__title">Жак-Ив Кусто</h1>
@@ -83,7 +107,10 @@
       <img alt="фото" class="card__img">
       <div class="card__text">
         <h2 class="card__title"></h2>
-        <button class="card__like"></button>
+        <div class="card__button">
+          <button class="card__like"></button>
+          <p class="card__like-counter">0</p>
+        </div>
       </div>
     </li>
   </template>
