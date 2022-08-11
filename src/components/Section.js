@@ -5,6 +5,10 @@ export default class Section {
         this._container = document.querySelector(containerSelector);
     }
 
+    setCardInfo(items){
+        this._renderedItems = items;
+    }
+
     renderItems() {
         this._renderedItems.forEach(item => {
             this._renderer(item);
