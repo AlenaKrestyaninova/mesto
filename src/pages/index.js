@@ -130,7 +130,7 @@ function submitAvatarPopup(formValues){
     popupAvatar.showLoading(true, 'Сохранение...');
     api.setAvatar(formValues)
             .then((res)=>{
-                document.querySelector('.profile__avatar-img').src = res.avatar;
+                userInfo.setUserInfo(res);
                 popupAvatar.close()
             })
             .catch((err) => console.log(err))
