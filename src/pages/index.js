@@ -37,7 +37,8 @@ const createCard = (cardObj) =>{
                 handleSubmitAction: ()=>{
                     api.deleteCard(cardObj._id)
                         .then(()=>{
-                            card.delete()
+                            card.delete();
+                            popupDelete.close()
                         })
                         .catch((err) => console.log(err))
                 }
@@ -158,10 +159,7 @@ popupEdit.setEventListeners();
 /* Создаем экземпляр попапа для удаления карточки*/
 const popupDelete = new PopupWithConfirm(
     '.popup_type_delete', {
-        handleFormSubmit: () => {
-            popupDelete.submitAction();
-            popupDelete.close()
-        }
+        handleFormSubmit: () => {},
     }); 
 popupDelete.setEventListeners();
 
