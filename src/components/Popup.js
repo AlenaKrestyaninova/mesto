@@ -22,7 +22,7 @@ export default class Popup {
     };
 
     setEventListeners(){
-        this._popupElement.addEventListener('click', e => {
+        this._popupElement.addEventListener('mousedown', e => {
             const isOverlay = e.target.classList.contains('popup');
             const isCloseBtn = e.target.classList.contains('popup__close');
             if (isOverlay || isCloseBtn) {

@@ -21,21 +21,7 @@ class Card {
       return cardElement;
     }
 
-    _setEventListeners(){
-      this._deleteButton.addEventListener('click', () => {
-          this._handleDeleteCard(this);
-        });
-      this._likeButton.addEventListener('click', () => {
-        if (this._likeButton.classList.contains('card__like_active')) {
-          this._handleDislikeCard();
-        } else {
-          this._handleLikeCard();
-        }
-      });
-      this._element.querySelector('.card__img').addEventListener('click', () => {
-        this._handleCardClick(this._name, this._link);
-      });
-    }
+
 
     like() {
       this._likeButton.classList.add('card__like_active');
@@ -58,25 +44,51 @@ class Card {
       }
     }
 
+    _activeLike() {
+      this._likes.forEach((like) => {
+        if (this._id === like._id) {
+          this._likeButton.classList.add('card__like_active');
+        }
+      });
+    }
+
     generateCard(){
       this._element = this._getTemplate();
-
-      this._element.querySelector('.card__title').textContent =this._name;
-      this._element.querySelector('.card__img').src =this._link;
-      this._element.querySelector('.card__img').alt =this._name;
 
       this._deleteButton = this._element.querySelector('.card__trash');
       this._likeButton = this._element.querySelector('.card__like');
       this._likeCounter = this._element.querySelector('.card__like-counter');
+      this._image = this._element.querySelector('.card__img');
+
+      this._element.querySelector('.card__title').textContent =this._name;
+      this._image.src =this._link;
+      this._image.alt =this._name;
 
       if (this._id !== this._ownerId) {
         this._deleteButton.style.display = "none";
       }
 
       this.countLikes(this._likes);
+      this._activeLike();
       this._setEventListeners();
 
       return this._element;
+    }
+
+    _setEventListeners(){
+      this._deleteButton.addEventListener('click', () => {
+          this._handleDeleteCard(this);
+        });
+      this._likeButton.addEventListener('click', () => {
+        if (this._likeButton.classList.contains('card__like_active')) {
+          this._handleDislikeCard();
+        } else {
+          this._handleLikeCard();
+        }
+      });
+      this._image.addEventListener('click', () => {
+        this._handleCardClick(this._name, this._link);
+      });
     }
 }
 

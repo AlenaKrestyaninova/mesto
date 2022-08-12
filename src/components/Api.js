@@ -1,8 +1,8 @@
 class Api {
-    constructor(host, token){
+    constructor({host, headers}){
         this._host = host;
-        this._token = token;
-        this._getJsonOrError = this._getJsonOrError.bind(this);
+        this._headers = headers;
+        //this._getJsonOrError = this._getJsonOrError.bind(this);
     }
 
     /* Вернуть результат или ошибку*/
@@ -16,9 +16,7 @@ class Api {
     /* Получить изначальные карточки с сервера*/
     getCards(){
         return fetch(`${this._host}/cards`, {
-            headers:{
-                authorization: this._token,
-            },
+            headers: this._headers,
         })
         .then(this._getJsonOrError)
     }
@@ -27,11 +25,11 @@ class Api {
     createCard(cardObj){
         return fetch(`${this._host}/cards`, {
             method: 'POST',
-            headers:{
-                authorization: this._token,
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(cardObj)
+            headers: this._headers,
+            body: JSON.stringify({
+                name: cardObj.name,
+                link: cardObj.link,
+            })
         })
         .then(this._getJsonOrError)
     }
@@ -40,9 +38,7 @@ class Api {
     deleteCard(_id){
         return fetch(`${this._host}/cards/${_id}`, {
             method: 'DELETE',
-            headers:{
-                authorization: this._token,
-            },
+            headers: this._headers,
         })
         .then(this._getJsonOrError)
     }
@@ -51,10 +47,7 @@ class Api {
     likeCard(_id){
         return fetch(`${this._host}/cards/${_id}/likes`, {
             method: 'PUT',
-            headers:{
-                authorization: this._token,
-                'Content-Type': 'application/json'
-            }
+            headers: this._headers,
         })
         .then(this._getJsonOrError)
     }
@@ -63,10 +56,7 @@ class Api {
     dislikeCard(_id) {
         return fetch(`${this._host}/cards/${_id}/likes`, {
             method: "DELETE",
-            headers:{
-                authorization: this._token,
-                'Content-Type': 'application/json'
-            }
+            headers: this._headers,
         }).then(this._getJsonOrError);
     }
 
@@ -74,10 +64,7 @@ class Api {
     getUserInfo(){
         return fetch(`${this._host}/users/me`, {
             method: 'GET',
-            headers:{
-                authorization: this._token,
-                'Content-Type': 'application/json'
-            }
+            headers: this._headers,
         })
         .then(this._getJsonOrError)
     }
@@ -86,10 +73,7 @@ class Api {
     setUserInfo(data){
         return fetch(`${this._host}/users/me`, {
             method: 'PATCH',
-            headers:{
-                authorization: this._token,
-                'Content-Type': 'application/json'
-            },
+            headers: this._headers,
             body: JSON.stringify({
                 name: data.name,
                 about: data.about,
@@ -102,10 +86,7 @@ class Api {
     setAvatar(avatar){
         return fetch(`${this._host}/users/me/avatar`, {
             method: 'PATCH',
-            headers:{
-                authorization: this._token,
-                'Content-Type': 'application/json'
-            },
+            headers: this._headers,
             body: JSON.stringify(avatar)
         })
         
