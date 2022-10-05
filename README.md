@@ -7,7 +7,7 @@
 **Интро**
 
 В данном задании реализован проект Mesto.
-Страницв сверстана согласно макету [макет в Figma](https://www.figma.com/file/2cn9N9jSkmxD84oJik7xL7/JavaScript.-Sprint-4?node-id=28212%3A155)
+Страницa сверстана согласно макету [макет в Figma](https://www.figma.com/file/2cn9N9jSkmxD84oJik7xL7/JavaScript.-Sprint-4?node-id=28212%3A155)
 Сайт адаптирован для экрана шириной от 320px до 1280px.
 
 ### Использованные технологии:
